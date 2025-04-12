@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,21 +102,17 @@
 
 /* Timeline specific styles */
 .timeline-dot {
-  @apply w-4 h-4 rounded-full;
+  @apply rounded-full z-10;
 }
 
 .timeline-line {
-  @apply w-1.5 h-12 rounded-full mx-auto my-1;
+  @apply rounded-full mx-auto transition-all duration-300;
 }
 
 .timeline-container {
-  @apply flex items-center gap-4 cursor-pointer transition-all duration-300 ease-in-out;
+  @apply transition-all duration-300 ease-in-out;
 }
 
 .timeline-details {
-  @apply mt-2 ml-12 mb-4 max-w-xs text-sm bg-white/50 p-3 rounded-md shadow-sm opacity-0 max-h-0 overflow-hidden transition-all duration-300;
-}
-
-.timeline-details.expanded {
-  @apply opacity-100 max-h-72;
+  @apply transition-all duration-300;
 }

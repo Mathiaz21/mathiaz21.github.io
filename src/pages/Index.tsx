@@ -8,10 +8,12 @@ import AboutMe from "@/components/AboutMe";
 const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center">
-      <Header />
-      <ContactLinks />
-      <Timeline />
-      <AboutMe />
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <Header />
+        <ContactLinks />
+        <Timeline />
+        <AboutMe />
+      </div>
     </div>
   );
 };
