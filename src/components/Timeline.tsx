@@ -59,75 +59,82 @@ const Timeline: React.FC = () => {
     <section className="my-10 w-full max-w-5xl mx-auto px-4">
       <h2 className="text-2xl font-bold text-center mb-10">My Timeline</h2>
       
-      <div className="grid grid-cols-2 gap-6 relative">
-        {/* Central timeline bars */}
-        <div className="absolute left-1/2 top-12 -translate-x-1/2 flex gap-20">
-          {/* Professional timeline bar */}
-          <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
-            {professionalData.map((item, index) => (
-              <div
-                key={`dot-professional-${index}`}
-                className={`absolute w-5 h-5 -left-1.5 rounded-full transition-all duration-300`}
-                style={{
-                  top: `${index * 150}px`,
-                  backgroundColor: `var(--timeline-${item.color})`,
-                }}
-              />
-            ))}
-          </div>
-          
-          {/* Academic timeline bar */}
-          <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
-            {academicData.map((item, index) => (
-              <div
-                key={`dot-academic-${index}`}
-                className={`absolute w-5 h-5 -left-1.5 rounded-full transition-all duration-300`}
-                style={{
-                  top: `${index * 150}px`,
-                  backgroundColor: `var(--timeline-${item.color})`,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Professional Column */}
-        <div className="flex flex-col items-end">
-          <h3 className="text-xl font-semibold mb-6 text-right">Professional</h3>
+      <div className="flex justify-center gap-12">
+        {/* Professional Column with timeline bar */}
+        <div className="flex gap-4">
+          {/* Professional Content */}
           <div className="flex flex-col items-end">
-            {professionalData.map((item, index) => (
-              <TimelineItem
-                key={`professional-${index}`}
-                organization={item.organization}
-                color={item.color as "blue" | "green" | "yellow" | "red" | "gray"}
-                startDate={item.startDate}
-                endDate={item.endDate}
-                description={item.description}
-                isExpanded={expandedItem === `professional-${index}`}
-                onClick={() => handleItemClick(`professional-${index}`)}
-                align="right"
-              />
-            ))}
+            <h3 className="text-xl font-semibold mb-6 text-right">Professional</h3>
+            <div className="flex flex-col items-end">
+              {professionalData.map((item, index) => (
+                <TimelineItem
+                  key={`professional-${index}`}
+                  organization={item.organization}
+                  color={item.color as "blue" | "green" | "yellow" | "red" | "gray"}
+                  startDate={item.startDate}
+                  endDate={item.endDate}
+                  description={item.description}
+                  isExpanded={expandedItem === `professional-${index}`}
+                  onClick={() => handleItemClick(`professional-${index}`)}
+                  align="right"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Professional timeline bar */}
+          <div className="mt-16 relative">
+            <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
+              {professionalData.map((item, index) => (
+                <div
+                  key={`dot-professional-${index}`}
+                  className={`absolute w-5 h-5 -left-1.5 rounded-full transition-all duration-300`}
+                  style={{
+                    top: `${index * 150}px`,
+                    backgroundColor: `var(--timeline-${item.color})`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </div>
         
-        {/* Academic Column */}
-        <div className="flex flex-col items-start">
-          <h3 className="text-xl font-semibold mb-6">Academic</h3>
+        {/* Academic Column with timeline bar */}
+        <div className="flex gap-4">
+          {/* Academic timeline bar */}
+          <div className="mt-16 relative">
+            <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
+              {academicData.map((item, index) => (
+                <div
+                  key={`dot-academic-${index}`}
+                  className={`absolute w-5 h-5 -left-1.5 rounded-full transition-all duration-300`}
+                  style={{
+                    top: `${index * 150}px`,
+                    backgroundColor: `var(--timeline-${item.color})`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Academic Content */}
           <div className="flex flex-col items-start">
-            {academicData.map((item, index) => (
-              <TimelineItem
-                key={`academic-${index}`}
-                organization={item.organization}
-                color={item.color as "blue" | "green" | "yellow" | "red" | "gray"}
-                startDate={item.startDate}
-                endDate={item.endDate}
-                description={item.description}
-                isExpanded={expandedItem === `academic-${index}`}
-                onClick={() => handleItemClick(`academic-${index}`)}
-                align="left"
-              />
-            ))}
+            <h3 className="text-xl font-semibold mb-6">Academic</h3>
+            <div className="flex flex-col items-start">
+              {academicData.map((item, index) => (
+                <TimelineItem
+                  key={`academic-${index}`}
+                  organization={item.organization}
+                  color={item.color as "blue" | "green" | "yellow" | "red" | "gray"}
+                  startDate={item.startDate}
+                  endDate={item.endDate}
+                  description={item.description}
+                  isExpanded={expandedItem === `academic-${index}`}
+                  onClick={() => handleItemClick(`academic-${index}`)}
+                  align="left"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
