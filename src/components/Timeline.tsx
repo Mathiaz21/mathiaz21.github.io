@@ -59,7 +59,38 @@ const Timeline: React.FC = () => {
     <section className="my-10 w-full max-w-5xl mx-auto px-4">
       <h2 className="text-2xl font-bold text-center mb-10">My Timeline</h2>
       
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 gap-6 relative">
+        {/* Central timeline bars */}
+        <div className="absolute left-1/2 top-12 -translate-x-1/2 flex gap-20">
+          {/* Professional timeline bar */}
+          <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
+            {professionalData.map((item, index) => (
+              <div
+                key={`dot-professional-${index}`}
+                className={`absolute w-5 h-5 -left-1.5 rounded-full transition-all duration-300`}
+                style={{
+                  top: `${index * 150}px`,
+                  backgroundColor: `var(--timeline-${item.color})`,
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Academic timeline bar */}
+          <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
+            {academicData.map((item, index) => (
+              <div
+                key={`dot-academic-${index}`}
+                className={`absolute w-5 h-5 -left-1.5 rounded-full transition-all duration-300`}
+                style={{
+                  top: `${index * 150}px`,
+                  backgroundColor: `var(--timeline-${item.color})`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* Professional Column */}
         <div className="flex flex-col items-end">
           <h3 className="text-xl font-semibold mb-6 text-right">Professional</h3>
