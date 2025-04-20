@@ -1,9 +1,11 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 interface TimelineItemProps {
   organization: string;
+  title: string;
   color: "blue" | "green" | "yellow" | "red" | "gray";
   startDate: string;
   endDate: string;
@@ -15,6 +17,7 @@ interface TimelineItemProps {
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
   organization,
+  title,
   color,
   startDate,
   endDate,
@@ -34,18 +37,22 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         <div
           className={cn(
             "timeline-content-wrapper group cursor-pointer rounded-lg p-4 transition-all duration-300",
-            "hover:bg-gray-100/70",
-            isExpanded && "bg-gray-100/70",
+            !isExpanded && "hover:bg-gray-100/70",
+            isExpanded && "bg-gray-100",
             align === "right" ? "text-right" : "text-left"
           )}
           onClick={onClick}
         >
-          <p className="font-medium">{organization}</p>
+          <div>
+            <p className="font-medium">{organization}</p>
+            <p className="text-sm text-gray-600">{title}</p>
+          </div>
           <div className={cn(
             "overflow-hidden transition-all duration-300",
             isExpanded ? "mt-2 max-h-72 opacity-100" : "max-h-0 opacity-0"
           )}>
-            <p className="font-medium mb-2">{startDate} - {endDate}</p>
+            <p className="text-sm text-gray-600 mb-2">{startDate} - {endDate}</p>
+            <Separator className="my-2 h-[2px] bg-gray-300" />
             <p>{description}</p>
           </div>
         </div>

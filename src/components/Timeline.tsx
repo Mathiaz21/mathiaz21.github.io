@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import TimelineItem from "./TimelineItem";
 
@@ -6,6 +5,7 @@ import TimelineItem from "./TimelineItem";
 const professionalData = [
   {
     organization: "BASE Life Science",
+    title: "Worker",
     color: "green",
     startDate: "Sept 2022",
     endDate: "Present",
@@ -13,6 +13,7 @@ const professionalData = [
   },
   {
     organization: "Verimag",
+    title: "Worker",
     color: "gray",
     startDate: "May 2020",
     endDate: "Aug 2020",
@@ -20,6 +21,7 @@ const professionalData = [
   },
   {
     organization: "Magasin General",
+    title: "Worker",
     color: "yellow",
     startDate: "June 2019",
     endDate: "Aug 2019",
@@ -30,6 +32,7 @@ const professionalData = [
 const academicData = [
   {
     organization: "DTU",
+    title: "Student",
     color: "blue",
     startDate: "Sept 2020",
     endDate: "June 2022",
@@ -37,6 +40,7 @@ const academicData = [
   },
   {
     organization: "Prep school Champollion",
+    title: "Student",
     color: "red",
     startDate: "Sept 2017",
     endDate: "June 2019",
