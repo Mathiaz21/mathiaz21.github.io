@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import TimelineItem from "./TimelineItem";
 
@@ -74,6 +75,7 @@ const Timeline: React.FC = () => {
                 <TimelineItem
                   key={`professional-${index}`}
                   organization={item.organization}
+                  title={item.title}
                   color={item.color as "blue" | "green" | "yellow" | "red" | "gray"}
                   startDate={item.startDate}
                   endDate={item.endDate}
@@ -129,6 +131,7 @@ const Timeline: React.FC = () => {
                 <TimelineItem
                   key={`academic-${index}`}
                   organization={item.organization}
+                  title={item.title}
                   color={item.color as "blue" | "green" | "yellow" | "red" | "gray"}
                   startDate={item.startDate}
                   endDate={item.endDate}
