@@ -60,8 +60,8 @@ const Timeline: React.FC = () => {
       <h2 className="text-2xl font-bold text-center mb-10">My Timeline</h2>
       
       <div className="flex justify-center gap-12">
-        {/* Professional Column with timeline bar */}
-        <div className="flex gap-4">
+        {/* Professional Column */}
+        <div className="flex gap-4 h-full">
           {/* Professional Content */}
           <div className="flex flex-col items-end">
             <h3 className="text-xl font-semibold mb-6 text-right">Professional</h3>
@@ -83,8 +83,8 @@ const Timeline: React.FC = () => {
           </div>
 
           {/* Professional timeline bar */}
-          <div className="mt-16 relative">
-            <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
+          <div className="relative h-full">
+            <div className="w-1.5 bg-gray-200 rounded-full absolute inset-y-16 left-0">
               {professionalData.map((item, index) => (
                 <div
                   key={`dot-professional-${index}`}
@@ -99,11 +99,11 @@ const Timeline: React.FC = () => {
           </div>
         </div>
         
-        {/* Academic Column with timeline bar */}
-        <div className="flex gap-4">
+        {/* Academic Column */}
+        <div className="flex gap-4 h-full">
           {/* Academic timeline bar */}
-          <div className="mt-16 relative">
-            <div className="w-1.5 h-[500px] bg-gray-200 rounded-full relative">
+          <div className="relative h-full">
+            <div className="w-1.5 bg-gray-200 rounded-full absolute inset-y-16 left-0">
               {academicData.map((item, index) => (
                 <div
                   key={`dot-academic-${index}`}
