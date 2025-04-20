@@ -27,16 +27,27 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     <div className="mb-6 w-full max-w-xs">
       <div 
         className={cn(
-          "timeline-container flex items-center gap-4 cursor-pointer transition-all duration-300 ease-in-out",
+          "timeline-container flex items-center gap-4",
           align === "right" ? "flex-row-reverse" : "flex-row"
-        )} 
-        onClick={onClick}
+        )}
       >
-        <div className={cn(
-          "w-40",
-          align === "right" ? "text-right" : "text-left"
-        )}>
+        <div
+          className={cn(
+            "timeline-content-wrapper group cursor-pointer rounded-lg p-4 transition-all duration-300",
+            "hover:bg-gray-100/70",
+            isExpanded && "bg-gray-100/70",
+            align === "right" ? "text-right" : "text-left"
+          )}
+          onClick={onClick}
+        >
           <p className="font-medium">{organization}</p>
+          <div className={cn(
+            "overflow-hidden transition-all duration-300",
+            isExpanded ? "mt-2 max-h-72 opacity-100" : "max-h-0 opacity-0"
+          )}>
+            <p className="font-medium mb-2">{startDate} - {endDate}</p>
+            <p>{description}</p>
+          </div>
         </div>
         
         <div className="flex flex-col items-center">
@@ -49,17 +60,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             )} 
           />
         </div>
-      </div>
-      
-      <div className={cn(
-        "timeline-details p-4 bg-white/50 rounded-md shadow-sm transition-all duration-300 mt-2",
-        align === "right" ? "mr-12" : "ml-12",
-        isExpanded 
-          ? "opacity-100 max-h-72 translate-y-0" 
-          : "opacity-0 max-h-0 translate-y-4 overflow-hidden p-0"
-      )}>
-        <p className="font-medium mb-2">{startDate} - {endDate}</p>
-        <p>{description}</p>
       </div>
     </div>
   );

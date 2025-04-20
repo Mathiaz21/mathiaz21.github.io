@@ -113,6 +113,10 @@
   @apply transition-all duration-300 ease-in-out;
 }
 
+.timeline-content-wrapper {
+  @apply bg-transparent;
+}
+
 .timeline-details {
   @apply transition-all duration-300;
 }
