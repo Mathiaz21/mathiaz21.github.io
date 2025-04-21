@@ -1,9 +1,9 @@
+
 import React, { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const ContactLinks: React.FC = () => {
-  const [showEmail, setShowEmail] = useState(false);
   const [tooltipContent, setTooltipContent] = useState("Click to copy");
   const email = "mathias.gilbert42@gmail.com";
 
@@ -12,6 +12,7 @@ const ContactLinks: React.FC = () => {
       await navigator.clipboard.writeText(email);
       setTooltipContent("Link copied");
       setTimeout(() => setTooltipContent("Click to copy"), 2000);
+      window.location.href = `mailto:${email}`;
     } catch (err) {
       console.error("Failed to copy email:", err);
     }
@@ -43,18 +44,13 @@ const ContactLinks: React.FC = () => {
           <TooltipTrigger asChild>
             <button
               onClick={handleEmailClick}
-              className="relative group text-gray-700 hover:text-red-600 transition-colors w-24 h-6 flex items-center"
-              onMouseEnter={() => setShowEmail(true)}
-              onMouseLeave={() => setShowEmail(false)}
+              className="relative overflow-hidden w-[200px] h-6"
               aria-label="Copy email address"
             >
-              <Mail 
-                size={24} 
-                className={`absolute left-0 transition-opacity duration-300 ${showEmail ? 'opacity-0' : 'opacity-100'}`}
-              />
-              <span 
-                className={`absolute left-0 text-sm transition-opacity duration-300 ${showEmail ? 'opacity-100' : 'opacity-0'}`}
-              >
+              <div className="flex items-center absolute left-0 w-full transition-transform duration-300 group-hover:-translate-x-full">
+                <Mail size={24} className="text-gray-700 hover:text-red-600 transition-colors" />
+              </div>
+              <span className="absolute left-0 text-sm transform translate-x-full transition-transform duration-300 group-hover:translate-x-0">
                 {email}
               </span>
             </button>
