@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -20,7 +19,7 @@ const ContactLinks: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-start items-center gap-6 my-8">
+    <div className="flex justify-center items-center gap-6 my-8">
       <span className="text-sm">Contact me:</span>
       <a 
         href="https://www.linkedin.com/in/mathias-gilbert/" 
@@ -45,17 +44,17 @@ const ContactLinks: React.FC = () => {
           <TooltipTrigger asChild>
             <button
               onClick={handleEmailClick}
-              className="relative group text-gray-700 hover:text-red-600 transition-colors w-24 h-6 flex items-center justify-center"
+              className="relative group text-gray-700 hover:text-red-600 transition-colors w-24 h-6 flex items-center"
               onMouseEnter={() => setShowEmail(true)}
               onMouseLeave={() => setShowEmail(false)}
               aria-label="Copy email address"
             >
               <Mail 
                 size={24} 
-                className={`absolute transition-opacity duration-300 ${showEmail ? 'opacity-0' : 'opacity-100'}`}
+                className={`absolute left-0 transition-opacity duration-300 ${showEmail ? 'opacity-0' : 'opacity-100'}`}
               />
               <span 
-                className={`absolute text-sm transition-opacity duration-300 ${showEmail ? 'opacity-100' : 'opacity-0'}`}
+                className={`absolute left-0 text-sm transition-opacity duration-300 ${showEmail ? 'opacity-100' : 'opacity-0'}`}
               >
                 {email}
               </span>
@@ -71,4 +70,3 @@ const ContactLinks: React.FC = () => {
 };
 
 export default ContactLinks;
-
