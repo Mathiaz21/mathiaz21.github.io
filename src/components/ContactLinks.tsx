@@ -2,28 +2,25 @@
 import React, { useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { useToast } from "@/hooks/use-toast";
 
 const ContactLinks: React.FC = () => {
   const [showEmail, setShowEmail] = useState(false);
-  const { toast } = useToast();
+  const [tooltipContent, setTooltipContent] = useState("Click to copy");
   const email = "mathias.gilbert42@gmail.com";
 
   const handleEmailClick = async () => {
     try {
       await navigator.clipboard.writeText(email);
       window.location.href = `mailto:${email}`;
-      toast({
-        title: "Email copied to clipboard",
-        duration: 2000,
-      });
+      setTooltipContent("Link copied");
+      setTimeout(() => setTooltipContent("Click to copy"), 2000);
     } catch (err) {
       console.error("Failed to copy email:", err);
     }
   };
 
   return (
-    <div className="flex justify-center items-center gap-6 my-8">
+    <div className="flex justify-start items-center gap-6 my-8">
       <span className="text-sm">Contact me:</span>
       <a 
         href="https://www.linkedin.com/in/mathias-gilbert/" 
@@ -65,7 +62,7 @@ const ContactLinks: React.FC = () => {
             </button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Click to copy</p>
+            <p>{tooltipContent}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
@@ -74,3 +71,4 @@ const ContactLinks: React.FC = () => {
 };
 
 export default ContactLinks;
+
