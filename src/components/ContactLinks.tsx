@@ -12,7 +12,6 @@ const ContactLinks: React.FC = () => {
       await navigator.clipboard.writeText(email);
       setTooltipContent("Link copied");
       setTimeout(() => setTooltipContent("Click to copy"), 2000);
-      window.location.href = `mailto:${email}`;
     } catch (err) {
       console.error("Failed to copy email:", err);
     }
