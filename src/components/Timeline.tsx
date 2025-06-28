@@ -6,46 +6,54 @@ import TimelineItem from "./TimelineItem";
 const professionalData = [
   {
     organization: "BASE Life Science",
-    title: "Worker",
+    title: "Junior Developer",
     color: "green",
     startDate: "Sept 2022",
     endDate: "Present",
-    description: "Working on innovative healthcare technology solutions. Collaborated with cross-functional teams to develop digital health platforms for pharmaceutical clients.",
+    description: "Working as a junior developer in the software developement team. Implementing features and correcting bugs.",
   },
   {
     organization: "Verimag",
-    title: "Worker",
+    title: "Research Intern",
     color: "gray",
     startDate: "May 2020",
     endDate: "Aug 2020",
-    description: "Research internship at the Verimag laboratory, working on formal verification methods for embedded systems and contributing to academic publications.",
+    description: "Research internship at the Verimag laboratory, simulating fault injections in C programs to test their resistance to this type of attack.",
   },
   {
     organization: "Magasin General",
-    title: "Worker",
+    title: "Seasonal worker",
     color: "yellow",
     startDate: "June 2019",
     endDate: "Aug 2019",
-    description: "Summer internship developing web applications and improving internal systems. Gained hands-on experience with modern web technologies and agile development practices.",
+    description: "Summer job at a local grocery store.",
   },
 ];
 
 const academicData = [
   {
     organization: "DTU",
-    title: "Student",
+    title: "MSc Student",
     color: "blue",
-    startDate: "Sept 2020",
-    endDate: "June 2022",
-    description: "Master's degree in Computer Science at Technical University of Denmark. Focused on machine learning and data science, with courses in advanced algorithms and distributed systems.",
+    startDate: "Sept 2024",
+    endDate: "June 2026",
+    description: "Master's degree in Computer Science at Technical University of Denmark. Focused on software engineering, with courses in machine learning and data science.",
+  },
+  {
+    organization: "ENSTA",
+    title: "Engineering Student (Masters Level)",
+    color: "blue",
+    startDate: "Sept 2022",
+    endDate: "June 2024",
+    description: "Engineering diploma in ENSTA, \"National Superior School of Advanced Techniques\". First year in general engineering, second year focused on computer science.",
   },
   {
     organization: "Prep school Champollion",
-    title: "Student",
+    title: "Student (Bachelor Level)",
     color: "red",
     startDate: "Sept 2017",
     endDate: "June 2019",
-    description: "Intensive preparatory program for engineering schools. Studied mathematics, physics, and computer science fundamentals with a rigorous curriculum.",
+    description: "Intensive preparatory program for entering French engineering schools. Studied mathematics, physics, and computer science fundamentals with a rigorous curriculum.",
   },
 ];
 
