@@ -10,7 +10,7 @@ const professionalData = [
     color: "green",
     startDate: "Sept 2022",
     endDate: "Present",
-    description: "Working as a junior developer in the software developement team. Implementing features and correcting bugs.",
+    description: "Working as a junior developer in the software developement team. Implementing features and correcting bugs in a software used by the consultants of the company.",
   },
   {
     organization: "Verimag",
@@ -18,7 +18,7 @@ const professionalData = [
     color: "gray",
     startDate: "May 2020",
     endDate: "Aug 2020",
-    description: "Research internship at the Verimag laboratory, simulating fault injections in C programs to test their resistance to this type of attack.",
+    description: "Research internship at the Verimag laboratory, simulating fault injections in a benchmark of C programs to test their resistance to these attacks.",
   },
   {
     organization: "Magasin General",
@@ -26,7 +26,7 @@ const professionalData = [
     color: "yellow",
     startDate: "June 2019",
     endDate: "Aug 2019",
-    description: "Summer job at a local grocery store.",
+    description: "Summer job at a local grocery store. Worked in every manual part of the business, from cashiering to receiving and storing deliveries, as well as re-stocking shelves and cleaning the shop.",
   },
 ];
 
