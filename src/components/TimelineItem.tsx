@@ -6,7 +6,6 @@ import { Separator } from "@/components/ui/separator";
 interface TimelineItemProps {
   organization: string;
   title: string;
-  color: "blue" | "green" | "yellow" | "red" | "gray";
   startDate: string;
   endDate: string;
   description: string;
@@ -18,7 +17,6 @@ interface TimelineItemProps {
 const TimelineItem: React.FC<TimelineItemProps> = ({
   organization,
   title,
-  color,
   startDate,
   endDate,
   description,
@@ -46,23 +44,22 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <div>
             <p className="font-medium">{organization}</p>
             <p className="text-sm text-gray-600">{title}</p>
+            <p className="text-sm text-gray-600 mb-2">{startDate} - {endDate}</p>
           </div>
           <div className={cn(
             "overflow-hidden transition-all duration-300",
             isExpanded ? "mt-2 max-h-72 opacity-100" : "max-h-0 opacity-0"
           )}>
-            <p className="text-sm text-gray-600 mb-2">{startDate} - {endDate}</p>
             <Separator className="my-2 h-[2px] bg-gray-300" />
             <p>{description}</p>
           </div>
         </div>
         
         <div className="flex flex-col items-center">
-          <div className={cn("timeline-dot w-5 h-5 rounded-full", `bg-timeline-${color}`)} />
+          <div className={cn("timeline-dot w-5 h-5 rounded-full")} />
           <div 
             className={cn(
               "timeline-line w-1.5 rounded-full mx-auto transition-all duration-300",
-              `bg-timeline-${color}`,
               isExpanded ? "h-32" : "h-12"
             )} 
           />
