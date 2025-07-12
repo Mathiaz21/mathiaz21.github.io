@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import ContactLinks from "@/components/ContactLinks";
 import Timeline from "@/components/Timeline";
 import AboutMe from "@/components/AboutMe";
+import Races from "@/components/Races"
 
 const Index: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Index: React.FC = () => {
         <ContactLinks />
         <Timeline />
         <AboutMe />
+        <Races />
       </div>
     </div>
   );
