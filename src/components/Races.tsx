@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import RaceItem from "./RaceItem";
 
-const racesData = [
+const racesData0 = [
   {
     name: "Gladsaxe Lobet 2025",
     date: new Date("June 15, 2025"),
@@ -27,6 +27,10 @@ const racesData = [
     myMaleRanking: 241,
   }
 ]
+
+const dataLocation: string = "@/data/races.json"
+var rawJson = require(dataLocation)
+const racesData = JSON.parse(rawJson)
 
 const Races: React.FC = () => {
 
