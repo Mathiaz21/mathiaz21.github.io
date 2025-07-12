@@ -3,7 +3,7 @@ const races = [
     name: "Gladsaxe Lobet 2025",
     date: new Date("June 15, 2025"),
     place: "Soborg",
-    distance: 10,
+    distance: "10 km",
     runningTime: 41.1,
     description: "Two loops of 5k in a green area in the North-West suburbs of Copenhagen. This race gathered few participants for a more important race took place on the same day: the half-marathon on the bridge connecting Denmark to Sweden, from Copenhagen to Malmo",
     participants: 58,

@@ -6,7 +6,7 @@ interface RaceItemProps {
   name: string;
   date: Date;
   place: string;
-  distance: number | string;
+  distance: string;
   runningTime: number;
   description: string;
   participants: number;
@@ -31,6 +31,13 @@ const RaceItem: React.FC<RaceItemProps> = ({
   onClick,
   isExpanded,
 }) => {
+
+  const parseDateOptions: object = {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+  }
   return (
     <div className="mb-6 w-full max-w-2xl">
       <div 
@@ -48,7 +55,7 @@ const RaceItem: React.FC<RaceItemProps> = ({
         >
           <div>
             <p className="font-medium">{name}</p>
-            <p className="text-sm text-gray-600">{date.toLocaleDateString()}</p>
+            <p className="text-sm text-gray-600">{date.toLocaleDateString("en-US", parseDateOptions)}</p>
             <p className="text-sm text-gray-600 mb-2">{distance}</p>
           </div>
           <div className={cn(

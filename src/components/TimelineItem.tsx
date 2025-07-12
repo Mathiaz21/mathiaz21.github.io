@@ -6,8 +6,8 @@ import { Separator } from "@/components/ui/separator";
 interface TimelineItemProps {
   organization: string;
   title: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date | void;
   description: string;
   isExpanded: boolean;
   onClick: () => void;
@@ -24,6 +24,14 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   onClick,
   align,
 }) => {
+
+  const dateParseOptions: object = {
+    month: "short",
+    year: "numeric"
+  }
+  const startDateStr: string = startDate.toLocaleDateString("en-US", dateParseOptions)
+  const endDateStr: string = endDate ? endDate.toLocaleDateString("en-US", dateParseOptions) : "Present"
+
   return (
     <div className="mb-6 w-full max-w-xs">
       <div 
@@ -44,7 +52,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <div>
             <p className="font-medium">{organization}</p>
             <p className="text-sm text-gray-600">{title}</p>
-            <p className="text-sm text-gray-600 mb-2">{startDate} - {endDate}</p>
+            <p className="text-sm text-gray-600 mb-2">{startDateStr} - {endDateStr}</p>
           </div>
           <div className={cn(
             "overflow-hidden transition-all duration-300",
