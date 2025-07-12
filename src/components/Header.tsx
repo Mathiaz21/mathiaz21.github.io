@@ -1,5 +1,6 @@
-
 import React from "react";
+
+const profile_pic_address: string = "./src/images/photo_cv.jpg"
 
 const Header: React.FC = () => {
 
@@ -8,7 +9,7 @@ const Header: React.FC = () => {
     <header className="flex flex-row items-center justify-center gap-8 pt-12 px-4">
       <div className="w-36 h-36 rounded-full overflow-hidden shrink-0">
         <img
-          src="./src/images/photo_cv.jpg"
+          src={profile_pic_address}
           alt="Profile Picture"
           className="w-full h-full object-cover"
         />
