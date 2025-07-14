@@ -1,6 +1,6 @@
 import React from "react";
 
-const profile_pic_address: string = "./src/images/photo_cv.jpg"
+const profile_pic_address: string = "https://avatars.githubusercontent.com/u/127032416"
 
 const Header: React.FC = () => {
 

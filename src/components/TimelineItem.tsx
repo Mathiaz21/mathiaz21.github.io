@@ -3,6 +3,13 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 
+
+// TODO: extend this component by adding an "expand" button that allows to 
+// open a wide pannel with more details about a certain Item.
+
+// TODO: make this item more customizable, so that it is for instance possible to 
+// add in fields specific to a timeline (for instance for races it should be possible
+// to add distance, time, ranking fields)
 interface TimelineItemProps {
   organization: string;
   title: string;
