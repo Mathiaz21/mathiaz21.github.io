@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import TimelineItem from "./TimelineItem";
+import TimelineItem, {TimelineItemProps} from "./TimelineItem";
 
 
-const Timeline: React.FC = (academicMilestones) => {
+const Timeline: React.FC = ({timelineData}) => {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   const handleItemClick = (itemId: string) => {
@@ -12,7 +12,7 @@ const Timeline: React.FC = (academicMilestones) => {
       setExpandedItem(itemId);
     }
   };
-
+  console.log(timelineData)
   return (
     // TODO: make it possible to toggle between both columns, make it possible to add more different timelines
     // For instance a Timeline for student clubs or past projects that weren't on GitHub, such as the Dragon's 
@@ -20,7 +20,7 @@ const Timeline: React.FC = (academicMilestones) => {
     <section className="my-10 w-full max-w-2xl px-2">
       <h3 className="text-xl font-semibold mb-6 text-center">Academic</h3>
       <div className="flex flex-col items-center">
-        {academicMilestones.map((item, index) => (
+        {timelineData.map((item, index) => (
           <TimelineItem
             key={`academic-${index}`}
             organization={item.organization}

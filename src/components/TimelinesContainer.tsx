@@ -32,7 +32,7 @@ const TimelinesContainer: React.FC = () => {
       <div className="my-10 w-full max-w-2xl px-3">
         <h2 className="text-2xl font-bold text-center mb-10">My Timelines</h2>
         <div className="absolute left-0 back"></div>
-        <Timeline academicMilestones={timelines[timelineId]}/>
+        <Timeline timelineData={timelines[timelineId]}/>
       </div>
       <div className="flex flex-col justify-center">
         <FontAwesomeIcon icon={faChevronRight} size={iconSize} color={iconColor}/>
