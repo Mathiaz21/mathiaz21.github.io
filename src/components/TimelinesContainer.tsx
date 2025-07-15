@@ -1,9 +1,10 @@
 import React, { useState} from "react"
-import Timeline from "./Timeline"
+import Timeline, { TimelineProps } from "./Timeline"
 import { faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import academicMilestones from "@/data/academicMilestones";
 import proMilestones from "@/data/proMilestones";
+
 
 
 
@@ -13,7 +14,7 @@ const TimelinesContainer: React.FC = () => {
   const iconColor = "grey"
 
   const [timelineId, setTimelineId] = useState<number>(0)
-  const timelines = [academicMilestones, proMilestones]
+  const timelines: Array<TimelineProps> = [academicMilestones, proMilestones]
   const numberOfTimelines: number = timelines.length
 
   const handleArrowClick = (timelineId: number, direction: string) => {
@@ -32,7 +33,7 @@ const TimelinesContainer: React.FC = () => {
       <div className="my-10 w-full max-w-2xl px-3">
         <h2 className="text-2xl font-bold text-center mb-10">My Timelines</h2>
         <div className="absolute left-0 back"></div>
-        <Timeline timelineData={timelines[timelineId]}/>
+        <Timeline title={timelines[timelineId].title} itemProps={timelines[timelineId].itemProps}/>
       </div>
       <div className="flex flex-col justify-center">
         <FontAwesomeIcon icon={faChevronRight} size={iconSize} color={iconColor}/>

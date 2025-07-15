@@ -18,7 +18,6 @@ interface TimelineItemProps {
   description: string;
   isExpanded: boolean;
   onClick: () => void;
-  align: "left" | "right";
 }
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -29,7 +28,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   description,
   isExpanded,
   onClick,
-  align,
 }) => {
 
   const dateParseOptions: object = {
@@ -44,7 +42,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       <div 
         className={cn(
           "timeline-container flex items-center gap-4",
-          align === "right" ? "flex-row-reverse" : "flex-row"
         )}
       >
         <div
@@ -52,7 +49,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             "timeline-content-wrapper group cursor-pointer rounded-lg p-4 transition-all duration-300",
             !isExpanded && "hover:bg-gray-100/70",
             isExpanded && "bg-gray-100",
-            align === "right" ? "text-right" : "text-left"
           )}
           onClick={onClick}
         >
