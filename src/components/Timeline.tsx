@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import TimelineItem from "./TimelineItem";
 import { TimelineData } from "@/ts_interfaces/TimelineData";
+import ItemCard from "./ItemCard";
 
 
 const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
-  const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const handleItemClick = (itemId: string) => {
-    if (expandedItem === itemId) {
-      setExpandedItem(null);
+  const handleItemClick = (itemId: number) => {
+    if (expandedIndex === itemId) {
+      setExpandedIndex(null);
     } else {
-      setExpandedItem(itemId);
+      setExpandedIndex(itemId);
     }
   };
   return (
@@ -28,11 +29,23 @@ const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
             startDate={item.startDate}
             endDate={item.endDate}
             description={item.description}
-            isExpanded={expandedItem === `academic-${index}`}
-            onClick={() => handleItemClick(`academic-${index}`)}
+            isExpanded={expandedIndex === index}
+            onClick={() => handleItemClick(index)}
           />
         ))}
       </div>
+      {(expandedIndex !== null) &&
+        // TODO: finish to center the div vertically
+        <div className="absolute right-3 top-1/2">
+        <ItemCard
+          organization={itemDataArray[expandedIndex].organization}
+          title={itemDataArray[expandedIndex].title}
+          startDate={itemDataArray[expandedIndex].startDate}
+          endDate={itemDataArray[expandedIndex].endDate}
+          description={itemDataArray[expandedIndex].description}
+        />
+        </div>
+      }
     </section>
   );
 };
