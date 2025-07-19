@@ -5,6 +5,7 @@ import { faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import academiaData from "@/data/academiaData";
 import proData from "@/data/proData";
+import { cn } from "@/lib/utils"
 
 
 
@@ -28,7 +29,13 @@ const TimelinesContainer: React.FC = () => {
 
   return (
     <div className="flex mx-auto">
-      <div className="flex flex-col justify-center cursor-pointer" onClick={() => handleArrowClick(timelineId, "left")}>
+      <div 
+        className={cn(
+          "flex flex-col justify-center cursor-pointer transition-all duration-300",
+          "hover:scale-110",
+        )} 
+        onClick={() => handleArrowClick(timelineId, "left")}
+      >
         <FontAwesomeIcon icon={faChevronLeft} size={iconSize} color={iconColor}/>
       </div>
       <div className="my-10 w-full max-w-2xl px-3">
@@ -36,7 +43,13 @@ const TimelinesContainer: React.FC = () => {
         <div className="absolute left-0 back"></div>
         <Timeline title={timelines[timelineId].title} itemDataArray={timelines[timelineId].itemDataArray}/>
       </div>
-      <div className="flex flex-col justify-center cursor-pointer" onClick={() => handleArrowClick(timelineId, "right")}>
+      <div
+        className={cn(
+          "flex flex-col justify-center cursor-pointer transition-all duration-300",
+          "hover:scale-110"
+        )} 
+        onClick={() => handleArrowClick(timelineId, "right")}
+      >
         <FontAwesomeIcon icon={faChevronRight} size={iconSize} color={iconColor}/>
       </div>
     </div>
