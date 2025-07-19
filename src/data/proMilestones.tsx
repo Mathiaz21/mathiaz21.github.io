@@ -1,9 +1,9 @@
-import { TimelineProps } from "@/components/Timeline"
+import { TimelineData } from "@/ts_interfaces/TimelineData"
 
-const proMilestones: TimelineProps =
+const proMilestones: TimelineData =
 {
   title: "Professional",
-  itemProps: [
+  itemDataArray: [
     {
       organization: "BASE Life Science",
       title: "Junior Developer",

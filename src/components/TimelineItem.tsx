@@ -1,4 +1,4 @@
-
+import { ItemProps } from "@/ts_interfaces/ItemProps";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
@@ -10,17 +10,9 @@ import { Separator } from "@/components/ui/separator";
 // TODO: make this item more customizable, so that it is for instance possible to 
 // add in fields specific to a timeline (for instance for races it should be possible
 // to add distance, time, ranking fields)
-interface TimelineItemProps {
-  organization: string;
-  title: string;
-  startDate: Date;
-  endDate: Date | void;
-  description: string;
-  isExpanded: boolean;
-  onClick: () => void;
-}
 
-const TimelineItem: React.FC<TimelineItemProps> = ({
+
+const TimelineItem: React.FC<ItemProps> = ({
   organization,
   title,
   startDate,
@@ -81,4 +73,4 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 };
 
 export default TimelineItem;
-export type { TimelineItemProps };
+export type { ItemProps };
