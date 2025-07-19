@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import TimelineItem from "./TimelineItem";
-import { TimelineProps } from "@/ts_interfaces/TimelineProps";
-import { ItemData } from "@/ts_interfaces/ItemData";
+import { TimelineData } from "@/ts_interfaces/TimelineData";
+import ItemCard from "./ItemCard";
 
 
+const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-const Timeline: React.FC<TimelineProps> = ({title, itemPropsArray}) => {
-  const [expandedItem, setExpandedItem] = useState<string | null>(null);
-
-  const handleItemClick = (itemId: string) => {
-    if (expandedItem === itemId) {
-      setExpandedItem(null);
+  const handleItemClick = (itemId: number) => {
+    if (expandedIndex === itemId) {
+      setExpandedIndex(null);
     } else {
-      setExpandedItem(itemId);
+      setExpandedIndex(itemId);
     }
   };
   return (
@@ -21,23 +20,36 @@ const Timeline: React.FC<TimelineProps> = ({title, itemPropsArray}) => {
     // game I made with Marc, or the TKinter processor simulator
     <section className="my-10 w-full max-w-2xl px-2">
       <h3 className="text-xl font-semibold mb-6 text-center">{title}</h3>
-      <div className="flex flex-col items-center">
-        {itemPropsArray.map((item, index) => (
+      <div className="flex flex-col items-center w-100">
+        {itemDataArray.map((item, index) => (
           <TimelineItem
             key={`academic-${index}`}
             organization={item.organization}
             title={item.title}
             startDate={item.startDate}
             endDate={item.endDate}
-            description={item.description}
-            isExpanded={expandedItem === `academic-${index}`}
-            onClick={() => handleItemClick(`academic-${index}`)}
+            isExpanded={expandedIndex === index}
+            onClick={() => handleItemClick(index)}
+            description=""
+            relevantLinks={new Array()}
           />
         ))}
       </div>
+      {(expandedIndex !== null) &&
+        // TODO: finish to center the div vertically
+        <div className="absolute right-3 top-1/2">
+        <ItemCard
+          organization={itemDataArray[expandedIndex].organization}
+          title={itemDataArray[expandedIndex].title}
+          startDate={itemDataArray[expandedIndex].startDate}
+          endDate={itemDataArray[expandedIndex].endDate}
+          description={itemDataArray[expandedIndex].description}
+          relevantLinks={itemDataArray[expandedIndex].relevantLinks}
+        />
+        </div>
+      }
     </section>
   );
 };
 
 export default Timeline;
-export type {TimelineProps}
