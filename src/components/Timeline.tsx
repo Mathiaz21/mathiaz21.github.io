@@ -20,7 +20,7 @@ const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
     // game I made with Marc, or the TKinter processor simulator
     <section className="my-10 w-full max-w-2xl px-2">
       <h3 className="text-xl font-semibold mb-6 text-center">{title}</h3>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-100">
         {itemDataArray.map((item, index) => (
           <TimelineItem
             key={`academic-${index}`}
@@ -28,9 +28,10 @@ const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
             title={item.title}
             startDate={item.startDate}
             endDate={item.endDate}
-            description={item.description}
             isExpanded={expandedIndex === index}
             onClick={() => handleItemClick(index)}
+            description=""
+            relevantLinks={new Array()}
           />
         ))}
       </div>
@@ -43,6 +44,7 @@ const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
           startDate={itemDataArray[expandedIndex].startDate}
           endDate={itemDataArray[expandedIndex].endDate}
           description={itemDataArray[expandedIndex].description}
+          relevantLinks={itemDataArray[expandedIndex].relevantLinks}
         />
         </div>
       }
