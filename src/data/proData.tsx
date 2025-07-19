@@ -1,6 +1,6 @@
 import { TimelineData } from "@/ts_interfaces/TimelineData"
 
-const proMilestones: TimelineData =
+const proData: TimelineData =
 {
   title: "Professional",
   itemDataArray: [
@@ -27,4 +27,4 @@ const proMilestones: TimelineData =
     },
   ]
 }
-export default proMilestones
+export default proData

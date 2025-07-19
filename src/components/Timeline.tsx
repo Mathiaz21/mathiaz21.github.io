@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import TimelineItem from "./TimelineItem";
-import { TimelineProps } from "@/ts_interfaces/TimelineProps";
-import { ItemData } from "@/ts_interfaces/ItemData";
+import { TimelineData } from "@/ts_interfaces/TimelineData";
 
 
-
-const Timeline: React.FC<TimelineProps> = ({title, itemPropsArray}) => {
+const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
 
   const handleItemClick = (itemId: string) => {
@@ -22,7 +20,7 @@ const Timeline: React.FC<TimelineProps> = ({title, itemPropsArray}) => {
     <section className="my-10 w-full max-w-2xl px-2">
       <h3 className="text-xl font-semibold mb-6 text-center">{title}</h3>
       <div className="flex flex-col items-center">
-        {itemPropsArray.map((item, index) => (
+        {itemDataArray.map((item, index) => (
           <TimelineItem
             key={`academic-${index}`}
             organization={item.organization}
@@ -40,4 +38,3 @@ const Timeline: React.FC<TimelineProps> = ({title, itemPropsArray}) => {
 };
 
 export default Timeline;
-export type {TimelineProps}

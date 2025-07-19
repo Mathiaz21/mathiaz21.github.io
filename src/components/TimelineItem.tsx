@@ -73,4 +73,3 @@ const TimelineItem: React.FC<ItemProps> = ({
 };
 
 export default TimelineItem;
-export type { ItemProps };

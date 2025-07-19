@@ -1,6 +1,6 @@
 import { TimelineData } from "@/ts_interfaces/TimelineData";
 
-const academicMilestones: TimelineData = {
+const academiaData: TimelineData = {
   title: "Academia",
   itemDataArray: 
   [
@@ -28,4 +28,4 @@ const academicMilestones: TimelineData = {
   ]
 };
 
-export default academicMilestones
+export default academiaData

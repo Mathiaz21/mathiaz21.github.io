@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import ContactLinks from "@/components/ContactLinks";
 import TimelinesContainer from "@/components/TimelinesContainer";
 import AboutMe from "@/components/AboutMe";
-import Races from "@/components/Races"
 
 const Index: React.FC = () => {
   return (
