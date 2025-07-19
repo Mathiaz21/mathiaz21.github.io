@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import ContactLinks from "@/components/ContactLinks";
-import Timeline from "@/components/Timeline";
+import TimelinesContainer from "@/components/TimelinesContainer";
 import AboutMe from "@/components/AboutMe";
 import Races from "@/components/Races"
 
@@ -12,9 +12,8 @@ const Index: React.FC = () => {
       <div className="w-full max-w-6xl mx-auto px-4 flex flex-col gap-20">
         <Header />
         <ContactLinks />
-        <Timeline />
+        <TimelinesContainer />
         <AboutMe />
-        <Races />
       </div>
     </div>
   );
