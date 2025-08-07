@@ -15,7 +15,7 @@ const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
     }
   };
   return (
-    // TODO: make it possible to toggle between both columns, make it possible to add more different timelines
+    // TODO: Add more different timelines
     // For instance a Timeline for student clubs or past projects that weren't on GitHub, such as the Dragon's 
     // game I made with Marc, or the TKinter processor simulator
     <section className="my-10 w-full max-w-2xl px-2">
@@ -45,6 +45,8 @@ const Timeline: React.FC<TimelineData> = ({title, itemDataArray}) => {
           endDate={itemDataArray[expandedIndex].endDate}
           description={itemDataArray[expandedIndex].description}
           relevantLinks={itemDataArray[expandedIndex].relevantLinks}
+          isExpanded={true}
+          onClick={() => setExpandedIndex(null)}
         />
         </div>
       }

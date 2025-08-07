@@ -17,7 +17,7 @@ const academiaData: TimelineData = {
       title: "Engineering Student (Masters Level)",
       startDate: new Date("September, 2022"),
       endDate: new Date("June, 2024"),
-      description: "For 2 years, I have studied to get an engineering diploma in ENSTA, the \"National Superior School of Advanced Techniques\". My first year was general engineering which comprised maths, solid and fluid material engineering as well as some computer science. In my second year I chose to focus solely on computer science.",
+      description: "For 2 years, I have studied to get an engineering diploma (equivalent to a master's degree in Engineering) in ENSTA, the \"National Superior School of Advanced Techniques\". My first year was general engineering which comprised maths, solid and fluid material engineering as well as some computer science. In my second year I chose to focus solely on computer science.",
       relevantLinks: new Array<Link>({placeHolder: "ENSTA Website", url: "https://www.ensta-paris.fr/en/node"})
     },
     {
@@ -25,7 +25,7 @@ const academiaData: TimelineData = {
       title: "Student (Bachelor Level)",
       startDate: new Date("September, 2020"),
       endDate: new Date("June, 2022"),
-      description: "I took a 2 years intensive preparatory program, with the objective of entering a French engineering school. I studied mathematics, physics, and computer science fundamentals with a rigorous curriculum. From what I understood, this type of studies is unique to France. During 2 years students study to pass a contest that takes place in the whole of France. This contest (\"Concours des Grandes Ecoles\") last about 2 months, comprises written and oral exams and ranks students. This ranking is used to determine which student may have access to the most prestigious French engineering schools.",
+      description: "I took a 2 years intensive preparatory program, with the objective of entering a French engineering school. I studied mathematics, physics, and computer science fundamentals with a rigorous curriculum. From what I understood, this type of studies is unique to France. During 2 years students study to pass a contest that takes place in the whole of the country. This contest (\"Concours des Grandes Ecoles\") last about 2 months, comprises written and oral exams and ranks students. This ranking is used to determine which students may have access to which schools, the better ranked students being the choosers.",
       relevantLinks: new Array<Link>({placeHolder: "Champollion School Website", url: "https://lycee-champollion.fr/"})
     },
   ]
