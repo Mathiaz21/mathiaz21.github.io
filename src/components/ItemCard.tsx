@@ -1,14 +1,16 @@
 import { ItemData } from '@/ts_interfaces/ItemData'
+import { ItemProps } from '@/ts_interfaces/ItemProps'
 import React from 'react'
 import { Separator } from '@radix-ui/react-separator'
 
-const ItemCard: React.FC<ItemData> = ({
+const ItemCard: React.FC<ItemProps> = ({
   organization,
   title,
   startDate,
   endDate,
   description,
-  relevantLinks
+  relevantLinks,
+  onClick
 }) => {
 
     const dateParseOptions: object = {
@@ -41,6 +43,7 @@ const ItemCard: React.FC<ItemData> = ({
           </li>
         ))}
       </ul>
+      <p className="cursor-pointer m-auto" onClick={onClick}>Close</p>
     </div>
   )
 }
