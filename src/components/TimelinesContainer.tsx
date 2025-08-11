@@ -5,6 +5,7 @@ import { faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import academiaData from "@/data/academiaData";
 import proData from "@/data/proData";
+import hackathonData from "@/data/hackathonData";
 import { cn } from "@/lib/utils"
 
 
@@ -16,7 +17,7 @@ const TimelinesContainer: React.FC = () => {
   const iconColor = "grey"
 
   const [timelineId, setTimelineId] = useState<number>(0)
-  const timelines: Array<TimelineData> = [academiaData, proData]
+  const timelines: Array<TimelineData> = [academiaData, proData, hackathonData]
   const numberOfTimelines: number = timelines.length
 
   const handleArrowClick = (timelineId: number, direction: string) => {
